@@ -28,6 +28,9 @@ public class LiveStreamInformation implements IEntity, IDto {
 	@Column(name = "liveStreamInformationId")
 	private Long id;
 
+	@Column(unique = false, nullable = true)
+	private Date lastUpdated;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "liveStreamInformationId")
 	private TwitchAccount twitchAccount;
