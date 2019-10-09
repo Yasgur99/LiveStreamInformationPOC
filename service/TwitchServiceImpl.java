@@ -143,7 +143,7 @@ public class TwitchServiceImpl extends AbstractService<TwitchAccount> implements
 			info = liveStreamInformationService.create(info);
 			info.setTwitchAccount(twitchAccount);
 			twitchAccount.setLiveStreamInformation(info);
-			liveStreamInformationService.update(info);
+			liveStreamInformationService.update(info); // i can comment this line out and it seems to act the same way
 			update(twitchAccount);
 
 			LiveStreamInformationResponseDto dto = info.convertToResponseDto();
